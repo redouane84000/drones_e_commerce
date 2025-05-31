@@ -19,7 +19,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://droneecommerce-production.up.railway.app/contact', {
+      const response = await fetch('https://dronesecommerce-production.up.railway.app/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
