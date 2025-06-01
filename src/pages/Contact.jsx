@@ -19,7 +19,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://dronesecommerce-production.up.railway.app/contact', {
+      const response = await fetch('http://localhost:3000/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -27,9 +27,10 @@ const Contact = () => {
         body: JSON.stringify(formData)
       });
 
-      const data = await response.json();
+      
       
       if (response.ok) {
+        const data = await response.json();
         alert('Message envoyé avec succès !');
         setFormData({
           nom: '',
@@ -38,7 +39,8 @@ const Contact = () => {
           message: ''
         });
       } else {
-        alert(data.error || 'Une erreur est survenue');
+        const errorText = data.error || 'Une erreur est survenue';  
+        alert(errorText);
       }
     } catch (error) {
       console.error('Erreur:', error);
