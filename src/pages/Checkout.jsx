@@ -35,7 +35,7 @@ function CheckoutForm({ amount }) {
   useEffect(() => {
     const fetchClientSecret = async () => {
       try {
-        const response = await fetch('https://dronesecommerce-production.up.railway.app/create-payment-intent', {
+        const response = await fetch('https://drone-production-8404.up.railway.app/create-payment-intent', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
